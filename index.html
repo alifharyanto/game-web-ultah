@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Syraa Birthday Game 🎀</title>
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, viewport-fit=cover, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323:wght@400&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ===== ROTATE WARNING ===== -->
+    <div id="rotateWarning">
+        <div class="rotate-box">
+            <i class="fa-solid fa-rotate"></i>
+            <p>Putar HP kamu ke<br><span>LANDSCAPE</span> dulu ya!</p>
+        </div>
+    </div>
+
+    <!-- ===== FULLSCREEN PROMPT ===== -->
+    <div id="fullscreenPrompt" class="hidden">
+        <div class="fs-box">
+            <i class="fa-solid fa-expand"></i>
+            <p>Tap untuk masuk<br><span>FULLSCREEN</span>!</p>
+            <button id="btnFullscreen"><i class="fa-solid fa-expand"></i> FULL SCREEN</button>
+        </div>
+    </div>
+
+    <!-- ===== LOADING / MENU SCREEN ===== -->
+    <div id="loadingScreen" class="hidden">
+        <img id="loadingBg" src="assets/img/gambar1.jpg" alt="loading bg">
+        <div class="loading-overlay"></div>
+        <div class="loading-content">
+            <div class="title-box">
+                <div class="title-deco">✦ ✦ ✦</div>
+                <h1 class="game-title">Syraa<br>Birthday<br>Game</h1>
+                <div class="title-deco">✦ ✦ ✦</div>
+            </div>
+            <div class="pixel-hearts">
+                <span>♥</span><span>♥</span><span>♥</span>
+            </div>
+            <div class="loading-progress-wrap hidden" id="loadingProgressWrap">
+                <div class="loading-label"><i class="fa-solid fa-circle-notch fa-spin"></i> Loading...</div>
+                <div class="progress-bar-outer">
+                    <div class="progress-bar-inner" id="progressBar"></div>
+                </div>
+                <div class="progress-percent" id="progressPercent">0%</div>
+            </div>
+            <div class="menu-buttons" id="mainMenu">
+                <button class="menu-btn" id="btnPlay"><i class="fa-solid fa-play"></i> START</button>
+                <button class="menu-btn" id="btnSettings"><i class="fa-solid fa-gear"></i> SETTINGS</button>
+                <button class="menu-btn" id="btnCredits"><i class="fa-solid fa-star"></i> CREDITS</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== SETTINGS OVERLAY ===== -->
+    <div id="settingsOverlay" class="overlay hidden">
+        <div class="overlay-panel">
+            <div class="overlay-title"><i class="fa-solid fa-gear"></i> SETTINGS</div>
+            <div class="setting-row">
+                <label><i class="fa-solid fa-music"></i> BGM</label>
+                <button class="toggle-btn" id="toggleBgm" data-muted="false"><i class="fa-solid fa-volume-high"></i>
+                    ON</button>
+                <input type="range" class="pixel-slider" id="bgmVolume" min="0" max="100" value="10">
+                <span class="vol-val" id="bgmVolVal">10</span>
+            </div>
+            <div class="setting-row">
+                <label><i class="fa-solid fa-bell"></i> SFX</label>
+                <button class="toggle-btn" id="toggleSfx" data-muted="false"><i class="fa-solid fa-volume-high"></i>
+                    ON</button>
+                <input type="range" class="pixel-slider" id="sfxVolume" min="0" max="100" value="25">
+                <span class="vol-val" id="sfxVolVal">25</span>
+            </div>
+            <div class="setting-row">
+                <label><i class="fa-solid fa-comment"></i> Klik SFX</label>
+                <button class="toggle-btn" id="toggleClick" data-muted="false"><i class="fa-solid fa-volume-high"></i>
+                    ON</button>
+                <input type="range" class="pixel-slider" id="clickVolume" min="0" max="100" value="40">
+                <span class="vol-val" id="clickVolVal">40</span>
+            </div>
+            <button class="exit-btn hidden" id="btnExitGame"><i class="fa-solid fa-door-open"></i> KELUAR KE
+                MENU</button>
+            <button class="close-btn" id="closeSettings"><i class="fa-solid fa-xmark"></i> CLOSE</button>
+        </div>
+    </div>
+
+    <!-- ===== CREDITS OVERLAY ===== -->
+    <div id="creditsOverlay" class="overlay hidden">
+        <div class="overlay-panel">
+            <div class="overlay-title"><i class="fa-solid fa-star"></i> CREDITS</div>
+            <div class="credits-content">
+                <p class="credits-line"><i class="fa-solid fa-heart"></i> Made with love for Syafira </p>
+                <p class="credits-line"><i class="fa-solid fa-cake-candles"></i> Happy Birthday gift Website Game</p>
+                <p class="credits-line"><i class="fa-solid fa-code"></i> Created by: @44mhmdalif_</p>
+                <p class="credits-line"><i class="fa-solid fa-image"></i> Art: Sanrio</p>
+                <p class="credits-line"><i class="fa-solid fa-info"></i> Version: 1.0.0</p>
+                <p class="credits-line"><i class="fa-solid fa-calendar"></i> Created at : 19, April 2026</p>
+            </div>
+            <button class="close-btn" id="closeCredits"><i class="fa-solid fa-xmark"></i> CLOSE</button>
+        </div>
+    </div>
+
+    <!-- ===== GAME ===== -->
+    <div id="game" class="hidden">
+        <img id="sceneImage" src="" alt="scene">
+        <div id="dialogueBox">
+            <div id="nameBox"><span id="name">Melody</span></div>
+            <div id="text"></div>
+            <div id="clickHint"><i class="fa-solid fa-chevron-right"></i></div>
+        </div>
+        <button id="inGameSettings"><i class="fa-solid fa-gear"></i></button>
+    </div>
+
+    <!-- ===== AUDIO ===== -->
+    <audio id="bgm" src="assets/audio/Koi is Love BGM.wav" loop></audio>
+    <audio id="sfx" src="assets/audio/bubble.mp3"></audio>
+    <audio id="clickSfx" src="assets/audio/klik.mp3"></audio>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
