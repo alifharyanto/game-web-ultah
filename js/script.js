@@ -3,7 +3,8 @@
    ========================================= */
 
 // ===== FRAME DATA =====
-// Setiap frame: image (background scene), name (nama karakter), texts (array dialog)
+// textDubbings → { indexTeks: "path/audio.mp3" }
+// suara akan play tepat saat teks ke-index itu muncul
 const frames = [
     {
         image: "assets/img/gambar1.jpg",
@@ -16,6 +17,9 @@ const frames = [
     {
         image: "assets/img/gambar2.png",
         name: "Melody",
+        textDubbings: {
+            1: "assets/audio/dubbing/phoneRingingCalling.mp3"  // "Calling..." index 1
+        },
         texts: [
             "Aku harus menghubungi teman-teman!",
             "Calling...",
@@ -40,6 +44,9 @@ const frames = [
     {
         image: "assets/img/gambar4.jpg",
         name: "Keroppi",
+        textDubbings: {
+            0: "assets/audio/dubbing/yay.mp3"
+        },
         texts: [
             "Hahaha gapapa Kitty, yang penting kita rayakan bareng-bareng yaa!",
             "Yuk kita buat surprise party untuk Syafiraa!"
@@ -65,10 +72,14 @@ const frames = [
             "Okeee, sekarang aku harus telepon Kuromi duluu!",
         ]
     },
-
     {
         image: "assets/img/gambar2.png",
         name: "Melody",
+        textDubbings: {
+            0: "assets/audio/dubbing/phoneRingingCalling.mp3",  // "Calling..." ke-1
+            1: "assets/audio/dubbing/phoneRingingCalling.mp3",  // "Calling..." ke-2
+            3: "assets/audio/dubbing/phoneRingingCalling.mp3"   // "Calling..." ke-3
+        },
         texts: [
             "Calling...",
             "Calling...",
@@ -306,6 +317,30 @@ const frames = [
         texts: ["OKEEE",
         ]
     },
+    {
+        image: "assets/img/gambar5.jpg",
+        name: "Melody",
+        texts: ["Hmmm....Sekarang aku harus berkumpul bersama teman teman untuk merayakan pesta ulang tahun Syafira",
+            "Tapii...",
+            "Mereka sudah sampai belum yaaa",
+            "Hmmm, biarin dehh aku jalan duluann lebih cepat lebih baikk",
+            "...",
+        ]
+    },
+    {
+        image: "assets/img/kota.jpg",
+        name: "System",
+        texts: ["Dan pada akhir nya Melody pun pergi berkumpul bersama teman-teman nyaa, untuk merayakan pesta ulang tahun Syafira",
+            "...........",
+        ]
+    },
+    {
+        image: "assets/img/kota.jpg",
+        name: "System",
+        texts: ["Dan pada akhir nya Melody pun pergi berkumpul bersama teman-teman nyaa, untuk merayakan pesta ulang tahun Syafira",
+            "...........",
+        ]
+    },
 ];
 
 // ===== ELEMENTS =====
@@ -333,6 +368,7 @@ const btnFullscreen = document.getElementById("btnFullscreen");
 const bgmAudio = document.getElementById("bgm");
 const sfxAudio = document.getElementById("sfx");
 const clickSfxAudio = document.getElementById("clickSfx");
+const dubbingAudio = document.getElementById("dubbingAudio");
 
 // ===== SETTINGS CONTROLS =====
 const toggleBgm = document.getElementById("toggleBgm");
@@ -396,7 +432,6 @@ function checkOrientation() {
     const isPortrait = window.innerHeight > window.innerWidth;
 
     if (!isMobile) {
-        // Desktop biasa
         rotateWarning.classList.remove("show");
         fullscreenPrompt.classList.add("hidden");
         loadingScreen.classList.remove("hidden");
@@ -404,7 +439,6 @@ function checkOrientation() {
     }
 
     if (desktopSiteMode) {
-        // Desktop site mode di HP
         if (isPortrait) {
             rotateWarning.classList.add("show");
             fullscreenPrompt.classList.add("hidden");
@@ -417,7 +451,6 @@ function checkOrientation() {
         return;
     }
 
-    // Mobile biasa
     if (isPortrait) {
         rotateWarning.classList.add("show");
         fullscreenPrompt.classList.add("hidden");
@@ -531,18 +564,16 @@ btnExitGame.addEventListener("click", () => {
     playClickSfx();
     settingsOverlay.classList.add("hidden");
 
-    // Reset state
     gameRunning = false;
     dialogueClickEnabled = false;
     typing = false;
     if (typingTimeout) clearTimeout(typingTimeout);
     stopTypingBlip();
+    stopDubbing();
 
-    // Stop audio
     bgmAudio.pause();
     bgmAudio.currentTime = 0;
 
-    // Sembunyikan game, tampilkan menu
     game.classList.add("hidden");
     btnExitGame.classList.add("hidden");
 
@@ -589,6 +620,22 @@ function stopTypingBlip() {
     sfxPlaying = false;
 }
 
+// ===== DUBBING / SFX PER TEKS =====
+// Volume dubbing ikut slider SFX (bukan BGM)
+function playDubbing(src) {
+    stopDubbing();
+    if (!src) return;
+    dubbingAudio.src = src;
+    dubbingAudio.volume = sfxMuted ? 0 : parseFloat(sfxVolSlider.value) / 100;
+    dubbingAudio.play().catch(() => { });
+}
+
+function stopDubbing() {
+    dubbingAudio.pause();
+    dubbingAudio.currentTime = 0;
+    dubbingAudio.src = "";
+}
+
 // ===== GAME CORE =====
 function startGame() {
     gameRunning = true;
@@ -603,6 +650,7 @@ function loadFrame() {
     dialogueClickEnabled = false;
     sceneImage.classList.add("fade");
     stopTypingBlip();
+    stopDubbing();
     if (typingTimeout) clearTimeout(typingTimeout);
 
     setTimeout(() => {
@@ -616,7 +664,6 @@ function loadFrame() {
         currentText = 0;
         showText();
 
-        // Enable klik tepat setelah teks mulai tampil
         dialogueClickEnabled = true;
     }, 350);
 }
@@ -652,7 +699,16 @@ function typeText(text) {
 }
 
 function showText() {
-    typeText(frames[currentFrame].texts[currentText]);
+    const frame = frames[currentFrame];
+
+    // Cek apakah teks index ini punya dubbing/sfx khusus
+    if (frame.textDubbings && frame.textDubbings[currentText] !== undefined) {
+        playDubbing(frame.textDubbings[currentText]);
+    } else {
+        stopDubbing();
+    }
+
+    typeText(frame.texts[currentText]);
 }
 
 // ===== DIALOGUE CLICK =====
@@ -695,7 +751,10 @@ bgmVolSlider.addEventListener("input", () => {
 });
 sfxVolSlider.addEventListener("input", () => {
     sfxVolVal.textContent = sfxVolSlider.value;
-    if (!sfxMuted) sfxAudio.volume = sfxVolSlider.value / 100;
+    if (!sfxMuted) {
+        sfxAudio.volume = sfxVolSlider.value / 100;
+        dubbingAudio.volume = sfxVolSlider.value / 100; // dubbing ikut slider SFX
+    }
 });
 clkVolSlider.addEventListener("input", () => {
     clickVolVal.textContent = clkVolSlider.value;
@@ -715,6 +774,7 @@ toggleSfx.addEventListener("click", () => {
     sfxMuted = !sfxMuted;
     toggleSfx.dataset.muted = sfxMuted;
     sfxAudio.muted = sfxMuted;
+    dubbingAudio.muted = sfxMuted; // dubbing ikut mute SFX
     toggleSfx.innerHTML = sfxMuted
         ? '<i class="fa-solid fa-volume-xmark"></i> OFF'
         : '<i class="fa-solid fa-volume-high"></i> ON';
@@ -741,7 +801,7 @@ toggleClick.addEventListener("click", () => {
 
 // ===== UNLOCK AUDIO saat interaksi pertama =====
 document.addEventListener("click", () => {
-    [bgmAudio, sfxAudio, clickSfxAudio].forEach(a => {
+    [bgmAudio, sfxAudio, clickSfxAudio, dubbingAudio].forEach(a => {
         if (a.paused && a !== bgmAudio) {
             a.play().then(() => a.pause()).catch(() => { });
         }
