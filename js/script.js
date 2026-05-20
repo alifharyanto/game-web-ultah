@@ -213,7 +213,7 @@ const frames = [
         ]
     },
     {
-        image: "assets/img/kuromi-cake.jpg",
+        image: "assets/img/kuromi.png",
         name: "Kuromi",
         texts: ["Hmm, baiklah kalo gitu aku akan siap-siap untuk merayakan juga.",
             "...",
@@ -335,10 +335,141 @@ const frames = [
         ]
     },
     {
+        image: "assets/img/gambar6.jpg",
+        name: "Melody",
+        texts: ["Hmmm.... Kalian udah siap belum guysss?",
+            "...",
+        ]
+    },
+    {
+        image: "assets/img/gambar6.jpg",
+        name: "Kuromi",
+        texts: ["Akuu siappp!!",
+        ]
+    },
+    {
+        image: "assets/img/gambar6.jpg",
+        name: "Hello Kitty",
+        texts: ["Aku jugaa siappp",
+        ]
+    },
+    {
+        image: "assets/img/gambar6.jpg",
+        name: "Melody",
+        texts: ["Yang lain semua nyaaa udahh siap belummm??",
+        ]
+    },
+    {
+        image: "assets/img/gambar6.jpg",
+        name: "All",
+        texts: ["SIAPPPPP",
+        ]
+    },
+    {
+        image: "assets/img/gambar6.jpg",
+        name: "Melody",
+        texts: ["Yauudahhh kalo gituu, aku panggil Syafira nya yaaa",
+            "Aku hitung mundur yaa sampai dari 3",
+            "Nanti kalian semua teriakk Happy Birthday Syafiraa!! yaaa",
+        ]
+    },
+    {
+        image: "assets/img/gambar6.jpg",
+        name: "all",
+        texts: ["Okeee, Melody",
+        ]
+    }, //ceritaaa pas masuk peran utama
+    {
+        image: "assets/img/gambar6.jpg",
+        name: "Melody",
+        texts: ["Okeee, kalo gitu aku hitung mundur dari sekarang yaaa....",
+            "3....",
+            "2....",
+            "1....",
+            "SEKARANG"
+        ]
+    },
+    {
+        image: "assets/img/gambar6.jpg",
+        name: "all",
+        textDubbings: {
+            0: "assets/audio/dubbing/happyBirthday-Dubbing.mp3"
+        },
+        texts: ["HAPPY BIRTHDAY SYAFIRAAA!",
+        ]
+    },
+    {
+        image: "assets/img/gambar6.jpg",
+        name: "all",
+        textDubbings: {
+            0: "assets/audio/dubbing/happyBirthday-Dubbing.mp3"
+        },
+        texts: ["HAPPY BIRTHDAY SYAFIRAAA!",
+        ]
+    },
+    {
+        image: "assets/img/gambar6.jpg",
+        name: "all",
+        textDubbings: {
+            0: "assets/audio/dubbing/happyBirthday-Dubbing.mp3"
+        },
+        texts: ["HAPPY BIRTHDAY SYAFIRAAA!",
+        ]
+    },
+    {
+        image: "assets/img/gambar6.jpg",
+        name: "all",
+        textDubbings: {
+            0: "assets/audio/dubbing/happyBirthday-Dubbing.mp3"
+        },
+        texts: ["HAPPY BIRTHDAY SYAFIRAAA!",
+        ]
+    },
+    {
+        image: "assets/img/gambar6.jpg",
+        name: "all",
+        textDubbings: {
+            0: "assets/audio/dubbing/happyBirthday-Dubbing.mp3"
+        },
+        texts: ["HAPPY BIRTHDAY SYAFIRAAA!",
+        ]
+    },
+    {
+        image: "assets/img/gambar7.jpg",
+        name: "Syafira🎀",
+        texts: ["WAHHHHHHH TERIMAKASIH SEMUANYA!!! 🥹",
+            "KALIANN MASIH INGAT AKU TERNYATAAA 🥹"
+        ]
+    },
+    {
+        image: "assets/img/gambar7.jpg",
+        name: "all",
+        texts: ["HEHEHE IYAA DONGGG",
+        ]
+    },
+    {
+        image: "assets/img/gambar7.jpg",
+        name: "Syafira🎀",
+        texts: ["AKU SENENG BANGETT",
+        ]
+    },
+    {
+        image: "assets/img/gambar7.jpg",
+        name: "Syafira🎀",
+        texts: ["SINII KALIAN MASUK KERUMAH AKUUU",
+        ]
+    },
+    {
+        image: "assets/img/gambar7.jpg",
+        name: "all",
+        texts: ["Okeyyy...",
+        ]
+    },
+        {
         image: "assets/img/kota.jpg",
         name: "System",
-        texts: ["Dan pada akhir nya Melody pun pergi berkumpul bersama teman-teman nyaa, untuk merayakan pesta ulang tahun Syafira",
-            "...........",
+        texts: ["Dan pada akhir nya Melody dan teman-teman nya pun merayakan pesta ulang tahun Syafira di rumah nya...",
+            "..........."   
         ]
     },
 ];
