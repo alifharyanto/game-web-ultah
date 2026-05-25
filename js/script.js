@@ -223,7 +223,7 @@ const frames = [
             "Tapii dia suka idol dari grup apa yaa??",
             "HMM.....",
             "OHHH IYAA AKU TAU...",
-            "AKU KASIH HADIAH BONEKA AJA KALI YAAA!!",
+            "AKU KASIH HADIAH BONEKA RAJUTAN AJA KALI YAAA!!",
             "Idee baguss"
         ]
     },
@@ -264,7 +264,7 @@ const frames = [
         image: "assets/img/kue-ultah.jpg",
         name: "Melody",
         texts: ["Owalahh jadi kita sama-sama kasih kado boneka yaa Kuromi,",
-            "Kamu memang mau kasih boneka apa untuk Syafira?",
+            "Kamu memang mau kasih boneka seperti apa untuk Syafira?",
         ]
     },
     {
@@ -272,14 +272,14 @@ const frames = [
         name: "Kuromi",
         texts: ["Hmmm apa yaaa....",
             "....",
-            "Aku sih pengen nya boneka lucu gitu. buat diaa buat nemenin diaa hehehe.",
+            "Aku sih pengen nya boneka rajutan lucu gitu...",
             "Kalo kamuu apa Melody??",
         ]
     },
     {
         image: "assets/img/kue-ultah.jpg",
         name: "Melody",
-        texts: ["Kalo aku sih pengen nya kasih boneka tapi boneka nya diri aku sendiri hehehe....",
+        texts: ["Kalo aku sih pengen nya kasih boneka rajutan juga tapi boneka rajutan nya diri aku sendiri hehehe....",
             "Agar Syafiraa bisa ingatt akuu SELAMAANYAA!! hehehee...."
         ]
     },
@@ -465,11 +465,18 @@ const frames = [
         texts: ["Okeyyy...",
         ]
     },
-        {
+    {
         image: "assets/img/kota.jpg",
         name: "System",
         texts: ["Dan pada akhir nya Melody dan teman-teman nya pun merayakan pesta ulang tahun Syafira di rumah nya...",
-            "..........."   
+            "..........."
+        ]
+    },
+    {
+        image: "assets/img/kota.jpg",
+        name: "System",
+        texts: ["Dan pada akhir nya Melody dan teman-teman nya pun merayakan pesta ulang tahun Syafira di rumah nya...",
+            "..........."
         ]
     },
 ];
