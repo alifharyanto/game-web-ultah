@@ -479,6 +479,284 @@ const frames = [
             "..........."
         ]
     },
+    {
+        image: "assets/img/gambar8.jpg",
+        name: "Syafira🎀",
+        texts: ["Wahhh terimakasih yaa semuanya untuk kejutan ulang tahun aku hari inii...",
+            "Aku seneng bangetttt 🥹",
+        ]
+    },
+    {
+        image: "assets/img/gambar8.jpg",
+        name: "all",
+        texts: ["Iyaa sama-sama Syafira.",
+        ]
+    },
+    {
+        image: "assets/img/gambar8.jpg",
+        name: "Melody",
+        texts: ["Aku juga seneng banget bisa ngerayain ulang tahun kamu hari ini bareng-bareng teman-teman yang lain jugaaaaa.",
+            "Dan semoga kitaa bisaa ketemu lagi di ulang tahun kamu di tahun depann yaaaaa Syafiraaa..."
+        ]
+    },
+    {
+        image: "assets/img/gambar8.jpg",
+        name: "Syafira🎀",
+        texts: ["Iyaa makasih yaa Melody, kalian semuaa baik bangett sama aku dan masih ingat akuu🥹",
+        ]
+    },
+    {
+        image: "assets/img/gambar9.jpg",
+        name: "Melody",
+        texts: ["Iyaa, Syafiraa kita selalu ingat kamu kokk, seperti kamu selalu ingat akuu dan teman-teman yang lain jugaa...",
+            "Hmmm...",
+            "Ohh iya Ini aku ada kue ulang tahun yang aku pesan dari Kuromi",
+            "Kamu terima yaaa hehehee...."
+        ]
+    },
+    {
+        image: "assets/img/gambar12.jpg",
+        name: "Melody",
+        texts: [
+            "Ohhh iyaa Syafiraa...",
+            "Ini aku ada kue ulang tahun yang aku pesan dari Kuromi",
+            "Kamu terima yaaa hehehee...."
+        ]
+    },
+    {
+        image: "assets/img/gambar12.jpg",
+        name: "Syafira🎀",
+        texts: ["WAHHH TERIMAKASIH MELODY, KUE NYA BAGUS BANGETTTT!!🥹",
+        ]
+    },
+    {
+        image: "assets/img/gambar12.jpg",
+        name: "Melody",
+        texts: ["Sama-sama Syafira.",
+        ]
+    },
+    {
+        image: "assets/img/gambar12.jpg",
+        name: "Kuromi",
+        texts: ["Hmm, Kalo inii hadiah dari aku juga Syafiraa secret gift hehehe...",
+        ]
+    },
+    {
+        image: "assets/img/gambar12.jpg",
+        name: "Kitty",
+        texts: ["Aku jugaa samaa, aku juga ada hadiah untuk kamu Syafiraa",
+        ]
+    },
+    {
+        image: "assets/img/gambar12.jpg",
+        name: "all",
+        texts: ["Aku jugaa samaa Syafiraa, kita juga ada hadiah untuk kamu Syafiraa",
+        ]
+    },
+    {
+        image: "assets/img/gambar12.jpg",
+        name: "Syafira🎀",
+        texts: ["WaHHH TERIMAKASIH SEMUANYA, AKU SENENG BANGETTTT!!🥹",
+        ]
+    },
+    {
+        image: "assets/img/gambar12.jpg",
+        name: "Syafira🎀",
+        texts: ["Hmm, kalo gitu gimana kalo kita potong kue nyaa?",
+            "Terus nanti kita makan bareng-bareng yaaa!!",
+        ]
+    },
+    {
+        image: "assets/img/gambar12.jpg",
+        name: "all",
+        texts: ["Hmm, boleh tuh hehehe...",
+        ]
+    },
+    {
+        image: "assets/img/gambar12.jpg",
+        name: "Snoopy",
+        texts: ["Ayo dong tiup dulu lilin nyaaa",
+        ]
+    },
+    {
+        image: "assets/img/gambar12.jpg",
+        name: "Snoopy",
+        texts: ["Kita sambil nyayi tiup lilin nyaa yaa guyss..",
+        ]
+    },
+    {
+        image: "assets/img/gambar12.jpg",
+        name: "all",
+        texts: ["OKEEE",
+        ]
+    },
+    {
+        image: "assets/img/gambar12.jpg",
+        name: "Melody",
+        texts: ["Kita hitung mundur yaa",
+        ]
+    },
+    {
+        image: "assets/img/gambar12.jpg",
+        name: "all",
+        texts: ["Okeyyy, Melody",
+        ]
+    },
+    {
+        image: "assets/img/gambar12.jpg",
+        name: "Melody",
+        texts: ["3....",
+            "2....",
+            "1....",
+        ]
+    },
+    {
+        image: "assets/img/gambar12.jpg",
+        name: "all",
+        textDubbings: {
+            0: "assets/audio/dubbing/happyBirthday-Dubbing.mp3"
+        },
+        texts: ["Tiup lilin nyaaa",
+            "Tiup lilin nyaaa",
+            "Tiup lilin nyaaa",
+            "Sekarang... Jugaaaaa",
+            "Sekarang... Jugaaaaa",
+            "Sekarang",
+            "Jugaaaa",
+        ]
+    },
+    {
+        image: "assets/img/gambar11.jpg",
+        name: "all",
+        textDubbings: {
+            0: "assets/audio/dubbing/happyBirthday-Dubbing.mp3"
+        },
+        texts: [
+            "Jugaaaa"
+        ]
+    },
+    {
+        image: "assets/img/gambar12.jpg",
+        name: "all",
+        texts: ["Happy Birthday Syafiraaa!!!",
+            "Semoga semua harapan dan impian kamu yang di umur sekarang ini bisa tercapai dan terwujud semua nya yaaaa Syafiraaa",
+        ]
+    },
+    {
+        image: "assets/img/gambar12.jpg",
+        name: "Syafira🎀",
+        texts: ["Terimakasih ya kalian semuaa",
+        ]
+    },
+    {
+        image: "assets/img/gambar12.jpg",
+        name: "Syafira🎀",
+        texts: ["Okeee kalo gitu aku mau potong kue nya dulu yaaa",
+        ]
+    },
+    {
+        image: "assets/img/gambar13.jpg",
+        name: "Syafira🎀",
+        texts: ["...",
+            "...",
+        ]
+    },
+    {
+        image: "assets/img/gambar13.jpg",
+        name: "System",
+        texts: ["Dan pada akhirnyaa Syafira pun memotong kue ulang tahun nyaa dan membagikan kue nya untuk semua teman-teman nyaaa...",
+        ]
+    },
+    {
+        image: "assets/img/kota.jpg",
+        name: "System",
+        texts: ["Loading...",
+            "................................."
+        ]
+    },
+    {
+        image: "assets/img/14.jpg",
+        name: "Syafira🎀",
+        texts: ["Semua nya udah dapat kue nyaa?",
+        ]
+    },
+    {
+        image: "assets/img/14.jpg",
+        name: "all",
+        texts: ["Sudahhh semuaa nyaa Syafiraaa....",
+        ]
+    },
+    {
+        image: "assets/img/14.jpg",
+        name: "Syafira🎀",
+        texts: ["Hmmm...",
+            "Kalo gituu ayo kita makan kue nyaaa yaaa!"
+        ]
+    },
+    {
+        image: "assets/img/14.jpg",
+        name: "all",
+        texts: ["Okeee",
+        ]
+    },
+    {
+        image: "assets/img/14.jpg",
+        name: "Snoopy",
+        texts: ["Nyam nyamm",
+            "Kue nya enak bangett...",
+            "Kamuu beli dimana?"
+        ]
+    },
+    {
+        image: "assets/img/14.jpg",
+        name: "Syafira🎀",
+        texts: ["Iyaa, nihh enakkkk",
+        ]
+    },
+    {
+        image: "assets/img/14.jpg",
+        name: "Melody",
+        texts: ["Aku beli nyaa di toko kue Kurommi tadii",
+            "Iyaaa, nggak Kuromi?",
+        ]
+    },
+    {
+        image: "assets/img/14.jpg",
+        name: "Kuromi",
+        texts: ["Iyaaa, Tadi Melody call akuu pass aku lagi bikin kuee",
+        ]
+    },
+    {
+        image: "assets/img/14.jpg",
+        name: "Snoopy",
+        texts: ["Hmm, kapan-kapan bantu ajarkan aku buat kuee enak lucu seperti ini ya mau ga?",
+        ]
+    },
+    {
+        image: "assets/img/14.jpg",
+        name: "Kuromi",
+        texts: ["Bisaaa, aja Snoopy",
+        ]
+    },
+    {
+        image: "assets/img/14.jpg",
+        name: "Syafira🎀",
+        texts: ["MAKASIH YAA KALIAN SEMUAA...",
+            "KALIAN REPOT-REPOT KESINI UNTUK MERAYAKAN ULANG TAHUN AKU",
+        ]
+    },
+    {
+        image: "assets/img/14.jpg",
+        name: "all",
+        texts: ["Iyaa sama-sama Syafiraa",
+        ]
+    },
+    {
+        image: "assets/img/14.jpg",
+        name: "System",
+        texts: ["Dan... Pada akhir nyaa mereka merayakan pesta ulang tahun dengan rasa hangat dan gembira",
+        ]
+    },
 ];
 
 // ===== ELEMENTS =====
@@ -619,7 +897,6 @@ function onFullscreenChange() {
 
 checkOrientation();
 
-// ===== FULLSCREEN =====
 function enterFullscreen() {
     const el = document.documentElement;
     if (el.requestFullscreen) el.requestFullscreen();
@@ -632,7 +909,6 @@ btnFullscreen.addEventListener("click", () => {
     enterFullscreen();
 });
 
-// ===== PRELOAD ASSETS =====
 function preloadAssets(onComplete) {
     const allImages = [...new Set(frames.map(f => f.image).filter(Boolean))];
     const total = allImages.length;
@@ -723,9 +999,11 @@ btnExitGame.addEventListener("click", () => {
     mainMenu.classList.remove("hidden");
     progressBar.style.width = "0%";
     progressPercent.textContent = "0%";
+
+    // Reset cinematic flag kalau user keluar manual
+    window._cinematicTriggered = false;
 });
 
-// ===== BGM =====
 function startBgm() {
     if (bgmMuted) return;
     bgmAudio.volume = parseFloat(bgmVolSlider.value) / 100;
@@ -733,7 +1011,6 @@ function startBgm() {
     if (bgmAudio.paused) bgmAudio.play().catch(() => { });
 }
 
-// ===== CLICK SFX =====
 function playClickSfx() {
     if (clickMuted) return;
     const clone = clickSfxAudio.cloneNode();
@@ -741,7 +1018,6 @@ function playClickSfx() {
     clone.play().catch(() => { });
 }
 
-// ===== TYPING SFX =====
 let sfxPlaying = false;
 
 function startTypingBlip() {
@@ -758,7 +1034,6 @@ function stopTypingBlip() {
     sfxPlaying = false;
 }
 
-// ===== DUBBING / SFX PER TEKS =====
 // Volume dubbing ikut slider SFX (bukan BGM)
 function playDubbing(src) {
     stopDubbing();
@@ -779,6 +1054,7 @@ function startGame() {
     gameRunning = true;
     currentFrame = 0;
     currentText = 0;
+    window._cinematicTriggered = false;
     btnExitGame.classList.remove("hidden");
     startBgm();
     loadFrame();
@@ -850,18 +1126,21 @@ function showText() {
 }
 
 // ===== DIALOGUE CLICK =====
+// PENTING: handleDialogueAdvance dijadikan window property
+// agar bisa di-override oleh cinematic.js
 document.getElementById("dialogueBox").addEventListener("click", (e) => {
     e.stopPropagation();
-    handleDialogueAdvance();
+    window.handleDialogueAdvance();
 });
 
 game.addEventListener("click", (e) => {
     if (e.target === game || e.target === sceneImage) {
-        handleDialogueAdvance();
+        window.handleDialogueAdvance();
     }
 });
 
-function handleDialogueAdvance() {
+// Definisikan sebagai window property sejak awal
+window.handleDialogueAdvance = function handleDialogueAdvance() {
     if (!dialogueClickEnabled) return;
     const frame = frames[currentFrame];
 
@@ -879,8 +1158,8 @@ function handleDialogueAdvance() {
         currentFrame++;
         loadFrame();
     }
-    // Jika sudah di frame & teks terakhir: tidak ada aksi (bisa tambah ending di sini)
-}
+    // Frame & teks terakhir: cinematic.js akan override ini untuk trigger ending
+};
 
 // ===== SETTINGS =====
 bgmVolSlider.addEventListener("input", () => {
