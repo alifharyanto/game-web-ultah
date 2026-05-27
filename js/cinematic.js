@@ -11,8 +11,8 @@ const cinematicSequence = {
 
     // Foto-foto yang ditampilkan di slideshow cinematic (tanpa textbox)
     shots: [
-        { image: "assets/img/gambar16.png", duration: 2, caption: null },
-        { image: "assets/img/gambar15.png", duration: 5, caption: null },
+        { image: "assets/img/gambar16.png", duration: 3, caption: null },
+        { image: "assets/img/gambar15.png", duration: 10, caption: null },
     ],
 
     // SFX shutter kamera (opsional, jika file ada)

@@ -514,8 +514,9 @@ const frames = [
             "Kamu terima yaaa hehehee...."
         ]
     },
+    // BUG BAGIAN SINI !!
     {
-        image: "assets/img/gambar12.jpg",
+        image: "assets/img/gambar12.png",
         name: "Melody",
         texts: [
             "Ohhh iyaa Syafiraa...",
@@ -524,86 +525,86 @@ const frames = [
         ]
     },
     {
-        image: "assets/img/gambar12.jpg",
+        image: "assets/img/gambar12.png",
         name: "Syafira🎀",
         texts: ["WAHHH TERIMAKASIH MELODY, KUE NYA BAGUS BANGETTTT!!🥹",
         ]
     },
     {
-        image: "assets/img/gambar12.jpg",
+        image: "assets/img/gambar12.png",
         name: "Melody",
         texts: ["Sama-sama Syafira.",
         ]
     },
     {
-        image: "assets/img/gambar12.jpg",
+        image: "assets/img/gambar12.png",
         name: "Kuromi",
         texts: ["Hmm, Kalo inii hadiah dari aku juga Syafiraa secret gift hehehe...",
         ]
     },
     {
-        image: "assets/img/gambar12.jpg",
+        image: "assets/img/gambar12.png",
         name: "Kitty",
         texts: ["Aku jugaa samaa, aku juga ada hadiah untuk kamu Syafiraa",
         ]
     },
     {
-        image: "assets/img/gambar12.jpg",
+        image: "assets/img/gambar12.png",
         name: "all",
         texts: ["Aku jugaa samaa Syafiraa, kita juga ada hadiah untuk kamu Syafiraa",
         ]
     },
     {
-        image: "assets/img/gambar12.jpg",
+        image: "assets/img/gambar12.png",
         name: "Syafira🎀",
         texts: ["WaHHH TERIMAKASIH SEMUANYA, AKU SENENG BANGETTTT!!🥹",
         ]
     },
     {
-        image: "assets/img/gambar12.jpg",
+        image: "assets/img/gambar12.png",
         name: "Syafira🎀",
         texts: ["Hmm, kalo gitu gimana kalo kita potong kue nyaa?",
             "Terus nanti kita makan bareng-bareng yaaa!!",
         ]
     },
     {
-        image: "assets/img/gambar12.jpg",
+        image: "assets/img/gambar12.png",
         name: "all",
         texts: ["Hmm, boleh tuh hehehe...",
         ]
     },
     {
-        image: "assets/img/gambar12.jpg",
+        image: "assets/img/gambar12.png",
         name: "Snoopy",
         texts: ["Ayo dong tiup dulu lilin nyaaa",
         ]
     },
     {
-        image: "assets/img/gambar12.jpg",
+        image: "assets/img/gambar12.png",
         name: "Snoopy",
         texts: ["Kita sambil nyayi tiup lilin nyaa yaa guyss..",
         ]
     },
     {
-        image: "assets/img/gambar12.jpg",
+        image: "assets/img/gambar12.png",
         name: "all",
         texts: ["OKEEE",
         ]
     },
     {
-        image: "assets/img/gambar12.jpg",
+        image: "assets/img/gambar12.png",
         name: "Melody",
         texts: ["Kita hitung mundur yaa",
         ]
     },
     {
-        image: "assets/img/gambar12.jpg",
+        image: "assets/img/gambar12.png",
         name: "all",
         texts: ["Okeyyy, Melody",
         ]
     },
     {
-        image: "assets/img/gambar12.jpg",
+        image: "assets/img/gambar12.png",
         name: "Melody",
         texts: ["3....",
             "2....",
@@ -611,7 +612,7 @@ const frames = [
         ]
     },
     {
-        image: "assets/img/gambar12.jpg",
+        image: "assets/img/gambar12.png",
         name: "all",
         textDubbings: {
             0: "assets/audio/dubbing/happyBirthday-Dubbing.mp3"
@@ -626,7 +627,7 @@ const frames = [
         ]
     },
     {
-        image: "assets/img/gambar11.jpg",
+        image: "assets/img/gambar11.png",
         name: "all",
         textDubbings: {
             0: "assets/audio/dubbing/happyBirthday-Dubbing.mp3"
@@ -636,33 +637,33 @@ const frames = [
         ]
     },
     {
-        image: "assets/img/gambar12.jpg",
+        image: "assets/img/gambar12.png",
         name: "all",
         texts: ["Happy Birthday Syafiraaa!!!",
             "Semoga semua harapan dan impian kamu yang di umur sekarang ini bisa tercapai dan terwujud semua nya yaaaa Syafiraaa",
         ]
     },
     {
-        image: "assets/img/gambar12.jpg",
+        image: "assets/img/gambar12.png",
         name: "Syafira🎀",
         texts: ["Terimakasih ya kalian semuaa",
         ]
     },
     {
-        image: "assets/img/gambar12.jpg",
+        image: "assets/img/gambar12.png",
         name: "Syafira🎀",
         texts: ["Okeee kalo gitu aku mau potong kue nya dulu yaaa",
         ]
     },
     {
-        image: "assets/img/gambar13.jpg",
+        image: "assets/img/gambar13.png",
         name: "Syafira🎀",
         texts: ["...",
             "...",
         ]
     },
     {
-        image: "assets/img/gambar13.jpg",
+        image: "assets/img/gambar13.png",
         name: "System",
         texts: ["Dan pada akhirnyaa Syafira pun memotong kue ulang tahun nyaa dan membagikan kue nya untuk semua teman-teman nyaaa...",
         ]
@@ -675,32 +676,32 @@ const frames = [
         ]
     },
     {
-        image: "assets/img/14.jpg",
+        image: "assets/img/gambar14.png",
         name: "Syafira🎀",
         texts: ["Semua nya udah dapat kue nyaa?",
         ]
     },
     {
-        image: "assets/img/14.jpg",
+        image: "assets/img/gambar14.png",
         name: "all",
         texts: ["Sudahhh semuaa nyaa Syafiraaa....",
         ]
     },
     {
-        image: "assets/img/14.jpg",
+        image: "assets/img/gambar14.png",
         name: "Syafira🎀",
         texts: ["Hmmm...",
             "Kalo gituu ayo kita makan kue nyaaa yaaa!"
         ]
     },
     {
-        image: "assets/img/14.jpg",
+        image: "assets/img/gambar14.png",
         name: "all",
         texts: ["Okeee",
         ]
     },
     {
-        image: "assets/img/14.jpg",
+        image: "assets/img/gambar14.png",
         name: "Snoopy",
         texts: ["Nyam nyamm",
             "Kue nya enak bangett...",
@@ -708,51 +709,51 @@ const frames = [
         ]
     },
     {
-        image: "assets/img/14.jpg",
+        image: "assets/img/gambar14.png",
         name: "Syafira🎀",
         texts: ["Iyaa, nihh enakkkk",
         ]
     },
     {
-        image: "assets/img/14.jpg",
+        image: "assets/img/gambar14.png",
         name: "Melody",
         texts: ["Aku beli nyaa di toko kue Kurommi tadii",
             "Iyaaa, nggak Kuromi?",
         ]
     },
     {
-        image: "assets/img/14.jpg",
+        image: "assets/img/gambar14.png",
         name: "Kuromi",
         texts: ["Iyaaa, Tadi Melody call akuu pass aku lagi bikin kuee",
         ]
     },
     {
-        image: "assets/img/14.jpg",
+        image: "assets/img/gambar14.png",
         name: "Snoopy",
         texts: ["Hmm, kapan-kapan bantu ajarkan aku buat kuee enak lucu seperti ini ya mau ga?",
         ]
     },
     {
-        image: "assets/img/14.jpg",
+        image: "assets/img/gambar14.png",
         name: "Kuromi",
         texts: ["Bisaaa, aja Snoopy",
         ]
     },
     {
-        image: "assets/img/14.jpg",
+        image: "assets/img/gambar14.png",
         name: "Syafira🎀",
         texts: ["MAKASIH YAA KALIAN SEMUAA...",
             "KALIAN REPOT-REPOT KESINI UNTUK MERAYAKAN ULANG TAHUN AKU",
         ]
     },
     {
-        image: "assets/img/14.jpg",
+        image: "assets/img/gambar14.png",
         name: "all",
         texts: ["Iyaa sama-sama Syafiraa",
         ]
     },
     {
-        image: "assets/img/14.jpg",
+        image: "assets/img/gambar14.png",
         name: "System",
         texts: ["Dan... Pada akhir nyaa mereka merayakan pesta ulang tahun dengan rasa hangat dan gembira",
         ]
