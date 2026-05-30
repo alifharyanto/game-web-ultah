@@ -1,27 +1,12 @@
-/* =========================================
-   CINEMATIC FRAME + CREDIT SCENE MODULE
-   Tambahkan setelah script.js di-load
-   ========================================= */
-
-// ===== CINEMATIC FRAMES DATA =====
-// Definisikan di sini tanpa mengubah const frames di atas
 const cinematicSequence = {
-    // Sisipkan setelah frame index terakhir (otomatis dipanggil setelah game selesai)
     enabled: true,
-
-    // Foto-foto yang ditampilkan di slideshow cinematic (tanpa textbox)
     shots: [
         { image: "assets/img/gambar16.png", duration: 3, caption: null },
         { image: "assets/img/gambar15.png", duration: 10, caption: null },
     ],
 
-    // SFX shutter kamera (opsional, jika file ada)
-    shutterSfx: "assets/audio/sfxShutterCamera.mp3", // ganti jika ada shutter.mp3
-
-    // Musik credit scene (loop)
+    shutterSfx: "assets/audio/sfxShutterCamera.mp3",
     creditBgm: "assets/audio/Koi is Love BGM.wav",
-
-    // Foto-foto momen epik di akhir credit
     epicMoments: [
         "assets/img/gambar6.jpg",
         "assets/img/gambar7.jpg",
@@ -32,11 +17,13 @@ const cinematicSequence = {
         "assets/img/gambar5.jpg"
     ],
 
-    // Teks credit
     credits: [
         { type: "section", text: "--- THE END ---" },
         { type: "subtitle", text: "Happy Birthday" },
-        { type: "title", text: "Syafira Tri Andini" },
+        { type: "title", text: "Syraa Birthday Game" },
+        { type: "spacer" },
+        { type: "spacer" },
+        { type: "spacer" },
         { type: "spacer" },
         { type: "section", text: "～ Special Thanks ～" },
         { type: "name", text: "Syafira Tri Andini (Peran Utama)" },
@@ -48,10 +35,16 @@ const cinematicSequence = {
         { type: "section", text: "～ Pesan Untuk Syafira ～" },
         { type: "message", text: "Semoga semua harapan dan impianmu\ndi umur yang baru ini bisa tercapai semua yaa" },
         { type: "spacer" },
+        { type: "spacer" },
+        { type: "spacer" },
         { type: "section", text: "～ Game by: ～" },
         { type: "name", text: "@44mhmdalif_" },
         { type: "role", text: "Secret Birthday Gift · 2 Juni 2026" },
         { type: "role", text: "Version 1.0.2" },
+        { type: "spacer" },
+        { type: "spacer" },
+        { type: "spacer" },
+        { type: "spacer" },
         { type: "spacer" },
         { type: "spacer" },
         { type: "epic", text: "__EPIC_MOMENTS__" },  // placeholder, diganti komponen foto
@@ -64,6 +57,9 @@ const cinematicSequence = {
 
 // ===== INJECT HTML UNTUK CINEMATIC & CREDIT SCENE =====
 (function injectCinematicUI() {
+    // FIX: Cegah duplikasi elemen HTML jika terjadi hot-reload berulang kali
+    if (document.getElementById("cinematicOverlay")) return;
+
     // --- Cinematic Overlay ---
     const cinematicHTML = `
     <div id="cinematicOverlay" class="cinematic-hidden">
@@ -93,7 +89,6 @@ const cinematicSequence = {
     injectCinematicCSS();
 })();
 
-// ===== INJECT CSS =====
 function injectCinematicCSS() {
     const style = document.createElement("style");
     style.textContent = `
@@ -157,6 +152,7 @@ function injectCinematicCSS() {
         z-index: 210;
         overflow: hidden;
         background: #0a0005;
+        touch-action: none; /* Kunci gesture scroll bawaan browser mobile */
     }
 
     /* Kolase BG foto-foto game */
@@ -210,8 +206,9 @@ function injectCinematicCSS() {
         z-index: 2;
         overflow: hidden;
         display: flex;
-        align-items: flex-end;
+        align-items: flex-start;
         justify-content: center;
+        touch-action: none; /* Cegah scroll swiping */
     }
 
     #creditContent {
@@ -219,10 +216,10 @@ function injectCinematicCSS() {
         max-width: 640px;
         padding: 0 24px;
         text-align: center;
-        will-change: transform;
+        /* FIX: Menghapus will-change: transform agar menghindari Bug GPU Texture Limit di Mobile HP */
+        pointer-events: none; /* Teks dan gambar diabaikan oleh klik/sentuhan jari agar tidak memicu scroll/drag */
     }
 
-    /* Credit teks styles */
     .credit-section {
         font-family: 'Press Start 2P', monospace;
         font-size: clamp(0.5rem, 1.8vmin, 0.75rem);
@@ -232,6 +229,7 @@ function injectCinematicCSS() {
         text-shadow: 0 0 12px #e91e8c, 2px 2px 0 #7b0037;
         animation: creditGlow 2s ease-in-out infinite;
     }
+
     @keyframes creditGlow {
         0%,100% { text-shadow: 0 0 12px #e91e8c, 2px 2px 0 #7b0037; }
         50%      { text-shadow: 0 0 24px #ff80ab, 2px 2px 0 #7b0037; }
@@ -282,10 +280,7 @@ function injectCinematicCSS() {
         background: rgba(233,30,140,0.08);
         white-space: pre-line;
     }
-
     .credit-spacer { height: 32px; }
-
-    /* Epic Moments Grid */
     .credit-epic-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -302,9 +297,7 @@ function injectCinematicCSS() {
         border: 3px solid #e91e8c;
         box-shadow: 3px 3px 0 #7b0037;
         filter: brightness(0.9) saturate(1.1);
-        transition: transform 0.3s ease;
     }
-    .credit-epic-grid img:hover { transform: scale(1.05); }
 
     .credit-epic-label {
         font-family: 'Press Start 2P', monospace;
@@ -351,6 +344,10 @@ function injectCinematicCSS() {
         padding: 24px;
         background: linear-gradient(to top, rgba(10,0,5,1) 60%, transparent);
         animation: btnFadeIn 0.8s ease forwards;
+    }
+    /* Biarkan tombol return bisa diklik ketika nanti muncul */
+    #creditReturnBtn button {
+        pointer-events: auto !important;
     }
     @keyframes btnFadeIn {
         from { opacity: 0; transform: translateY(20px); }
@@ -408,9 +405,7 @@ function injectCinematicCSS() {
     document.head.appendChild(style);
 }
 
-// ===== AUDIO untuk credit scene =====
 let creditBgmAudio = null;
-
 function startCreditBgm() {
     if (!creditBgmAudio) {
         creditBgmAudio = document.createElement("audio");
@@ -430,11 +425,9 @@ function stopCreditBgm() {
     }
 }
 
-// Shutter SFX menggunakan dubbingAudio yang sudah ada
 function playShutterSfx() {
     const el = document.getElementById("dubbingAudio");
     if (!el) return;
-    // Coba shutter khusus, fallback ke klik SFX
     const shutterEl = document.getElementById("clickSfx");
     if (shutterEl) {
         const clone = shutterEl.cloneNode();
@@ -443,16 +436,12 @@ function playShutterSfx() {
     }
 }
 
-// ===== CINEMATIC SLIDESHOW =====
 function startCinematicSequence(onDone) {
     const overlay = document.getElementById("cinematicOverlay");
     const shotsDiv = document.getElementById("cinematicShots");
     const flash = document.getElementById("cinematicFlash");
-
     overlay.classList.remove("cinematic-hidden");
     shotsDiv.innerHTML = "";
-
-    // Preload & buat img elements
     const shots = cinematicSequence.shots;
     const imgs = shots.map((shot, i) => {
         const img = document.createElement("img");
@@ -464,10 +453,8 @@ function startCinematicSequence(onDone) {
     });
 
     let idx = 0;
-
     function showShot(i) {
         if (i >= shots.length) {
-            // Semua shot selesai → jeda 2 detik lalu credit
             setTimeout(() => {
                 overlay.classList.add("cinematic-hidden");
                 onDone();
@@ -488,10 +475,11 @@ function startCinematicSequence(onDone) {
         playShutterSfx();
         setTimeout(() => flash.classList.remove("flash-active"), 120);
 
+        // Mengalikan dengan 1000 agar nilai detik dikonversi ke milidetik secara tepat
         setTimeout(() => {
             idx++;
             showShot(idx);
-        }, shots[i].duration);
+        }, shots[i].duration * 1000);
     }
 
     showShot(0);
@@ -570,7 +558,7 @@ function buildCreditBgCollage() {
     }
 }
 
-// ===== CREDIT SCENE SCROLL ANIMATION =====
+// ===== CREDIT SCENE SCROLL ANIMATION (FIXED & SMOOTH) =====
 function startCreditScene() {
     const creditEl = document.getElementById("creditScene");
     const scrollWrap = document.getElementById("creditScrollWrap");
@@ -584,6 +572,11 @@ function startCreditScene() {
     creditEl.classList.remove("cinematic-hidden");
     returnBtn.classList.add("cinematic-hidden");
 
+    // KUNCI MOBILE SCROLL (Mencegah user drag layar di HP pakai jari)
+    const preventMobileScroll = (e) => { e.preventDefault(); };
+    creditEl.addEventListener("touchmove", preventMobileScroll, { passive: false });
+    scrollWrap.addEventListener("touchmove", preventMobileScroll, { passive: false });
+
     // Spawn partikel pink
     spawnCreditParticles(creditEl);
 
@@ -595,64 +588,89 @@ function startCreditScene() {
         setTimeout(() => collage.classList.add("collage-visible"), 100);
     });
 
-    // Hitung total scroll: konten mulai dari bawah viewport ke atas
-    // Beri waktu render dulu
-    setTimeout(() => {
-        const totalHeight = content.scrollHeight + window.innerHeight + 80;
-        // Durasi: ~12s/1000px, min 18s, max 60s
-        const duration = Math.min(Math.max(totalHeight * 12, 18000), 60000);
+    // FIX: Tunggu SEMUA gambar epic moments selesai di-load sebelum hitung tinggi agar jarak akurat
+    const images = Array.from(content.querySelectorAll("img"));
+    const promises = images.map(img => {
+        if (img.complete) return Promise.resolve();
+        return new Promise(resolve => {
+            img.onload = resolve;
+            img.onerror = resolve; // Tetap lanjut meskipun ada 1 gambar gagal dimuat
+        });
+    });
 
-        // Mulai dari bawah layar
-        content.style.transform = `translateY(${window.innerHeight + 40}px)`;
+    Promise.all(promises).then(() => {
+        // Beri waktu render tambahan agar browser selesai menempatkan gambar di DOM
+        setTimeout(() => {
+            const contentHeight = content.scrollHeight;
+            const windowHeight = window.innerHeight;
 
-        let startTime = null;
-        let animFrame = null;
-        let scrollDone = false;
+            // Kecepatan piksel per detik (18px/s sudah sangat pas)
+            const speedPixelsPerSecond = 18;
 
-        function scrollStep(ts) {
-            if (!startTime) startTime = ts;
-            const elapsed = ts - startTime;
-            const progress = Math.min(elapsed / duration, 1);
+            // Hitung total jarak tempuh
+            const totalDistance = contentHeight + windowHeight;
+            const durationSeconds = totalDistance / speedPixelsPerSecond;
 
-            const startY = window.innerHeight + 40;
-            const endY = -(content.scrollHeight + 80);
-            const currentY = startY + (endY - startY) * easeLinear(progress);
-            content.style.transform = `translateY(${currentY}px)`;
+            // Injeksi/update style keyframes secara dinamis ke dokumen
+            const styleId = "dynamic-credit-scroll-style";
+            let styleEl = document.getElementById(styleId);
+            if (!styleEl) {
+                styleEl = document.createElement("style");
+                styleEl.id = styleId;
+                document.head.appendChild(styleEl);
+            }
 
-            if (progress < 1) {
-                animFrame = requestAnimationFrame(scrollStep);
-            } else {
-                // Scroll selesai
+            styleEl.textContent = `
+                @keyframes hardwareScrollUp {
+                    0%   { transform: translateY(${windowHeight}px); }
+                    100% { transform: translateY(-${contentHeight}px); }
+                }
+                .run-credit-scroll {
+                    animation: hardwareScrollUp ${durationSeconds}s linear forwards !important;
+                }
+            `;
+
+            // Pastikan class scroll dilepas dulu, paksa posisi awal
+            content.classList.remove("run-credit-scroll");
+            content.style.transform = `translateY(${windowHeight}px)`;
+            content.style.transition = "none";
+            content.style.opacity = "1";
+
+            // Force reflow sebelum menjalankan animasi
+            void content.offsetHeight; 
+
+            // Jalankan animasi
+            content.classList.add("run-credit-scroll");
+
+            let scrollDone = false;
+
+            // Handler saat credit scene selesai berjalan
+            function handleCreditFinished() {
+                if (scrollDone) return;
                 scrollDone = true;
+
+                // Bersihkan kuncian event scroll mobile setelah selesai
+                creditEl.removeEventListener("touchmove", preventMobileScroll);
+                scrollWrap.removeEventListener("touchmove", preventMobileScroll);
+
+                // FIX: Matikan animasi CSS dan biarkan opasitas tetap solid (jangan 0)
+                content.classList.remove("run-credit-scroll");
+                content.style.transform = `translateY(-${contentHeight}px)`;
+                content.style.transition = "opacity 1.2s ease";
+                content.style.opacity = "0.95";
+
                 onCreditScrollDone();
             }
-        }
 
-        animFrame = requestAnimationFrame(scrollStep);
+            content.addEventListener("animationend", handleCreditFinished, { once: true });
 
-        // Skip with click (opsional)
-        creditEl.addEventListener("click", function skipCredit() {
-            if (scrollDone) return;
-            if (animFrame) cancelAnimationFrame(animFrame);
-            content.style.transform = `translateY(-${content.scrollHeight + 80}px)`;
-            scrollDone = true;
-            onCreditScrollDone();
-            creditEl.removeEventListener("click", skipCredit);
-        }, { once: false });
-
-    }, 800);
+        }, 300); // 300ms cukup aman setelah Promise semua gambar selesai
+    });
 
     function onCreditScrollDone() {
-        // Hilangkan semua tulisan credit dengan fade
-        content.style.transition = "opacity 1s ease";
-        content.style.opacity = "0";
-
         setTimeout(() => {
-            // Jeda 2 detik lalu muncul tombol kembali
-            setTimeout(() => {
-                returnBtn.classList.remove("cinematic-hidden");
-            }, 2000);
-        }, 1000);
+            returnBtn.classList.remove("cinematic-hidden");
+        }, 2000);
     }
 }
 
@@ -690,11 +708,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // ===== HOOK KE SISTEM GAME YANG SUDAH ADA =====
-// Fungsi ini menggantikan "tidak ada aksi di frame & teks terakhir"
-// dengan memulai cinematic sequence → credit scene
 (function hookGameEnd() {
-    // Tunggu sampai script.js selesai definisikan handleDialogueAdvance
-    // Kita override dengan patch di atas
     const origInterval = setInterval(() => {
         if (typeof handleDialogueAdvance !== "undefined") {
             clearInterval(origInterval);
@@ -703,14 +717,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 100);
 
     function patchGameEnd() {
-        // Simpan referensi original (sudah di-define di script.js via function declaration)
         const origFn = handleDialogueAdvance;
 
-        // Override global handleDialogueAdvance
         window.handleDialogueAdvance = function () {
             if (typeof dialogueClickEnabled !== "undefined" && !dialogueClickEnabled) return;
 
-            // Cek apakah ini frame & teks terakhir
             const isLastFrame = (typeof currentFrame !== "undefined" && typeof frames !== "undefined")
                 && currentFrame >= frames.length - 1;
             const frame = (typeof frames !== "undefined") ? frames[currentFrame] : null;
@@ -718,20 +729,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 && currentText >= frame.texts.length - 1;
 
             if (isLastFrame && isLastText && typeof typing !== "undefined" && !typing) {
-                // GAME SELESAI → mulai cinematic
                 triggerEndSequence();
                 return;
             }
 
-            // Lainnya: panggil logika asli
             origFn();
         };
-
-        // Patch event listeners (dialogueBox dan game sudah pakai handleDialogueAdvance via reference)
-        // Karena di script.js keduanya call handleDialogueAdvance() langsung (bukan lewat variabel),
-        // kita perlu re-patch dengan cara berbeda:
-        // Hapus listener lama tidak bisa, tapi kita bisa cek di dalam fungsi global.
-        // Solusi: tambahkan flag agar tidak double-fire
         console.log("[CinematicModule] Game end hook aktif.");
     }
 })();
@@ -740,20 +743,16 @@ function triggerEndSequence() {
     if (window._cinematicTriggered) return;
     window._cinematicTriggered = true;
 
-    // Pause BGM game
     const bgm = document.getElementById("bgm");
     if (bgm) {
         bgm.style.transition = "volume 1s";
         bgm.pause();
     }
 
-    // Sembunyikan game UI
     const gameEl = document.getElementById("game");
     if (gameEl) gameEl.classList.add("hidden");
 
-    // Mulai cinematic
     startCinematicSequence(() => {
-        // Cinematic selesai → credit scene
         startCreditScene();
     });
 }

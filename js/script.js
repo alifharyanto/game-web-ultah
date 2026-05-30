@@ -627,16 +627,6 @@ const frames = [
         ]
     },
     {
-        image: "assets/img/gambar11.png",
-        name: "all",
-        textDubbings: {
-            0: "assets/audio/dubbing/happyBirthday-Dubbing.mp3"
-        },
-        texts: [
-            "Jugaaaa"
-        ]
-    },
-    {
         image: "assets/img/gambar12.png",
         name: "all",
         texts: ["Happy Birthday Syafiraaa!!!",
